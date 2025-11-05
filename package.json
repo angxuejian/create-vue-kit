@@ -1,0 +1,43 @@
+{
+  "name": "create-vue-kit",
+  "version": "1.0.0",
+  "description": "Scaffold a lightweight Vue 3 monorepo project powered by Vite, TypeScript, ESLint, and Prettier.",
+  "bin": {
+    "create-vue-kit": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "vite",
+    "typescript",
+    "template",
+    "starter",
+    "monorepo",
+    "create-vue",
+    "vue3",
+    "lightweight",
+    "boilerplate"
+  ],
+  "author": "angxuejian",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angxuejian/create-vue-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angxuejian/create-vue-kit/issues"
+  },
+  "homepage": "https://github.com/angxuejian/create-vue-kit#readme",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs-extra": "^11.3.2",
+    "prompts": "^2.4.2"
+  },
+  "files": [
+    "bin/",
+    "template/",
+    "template/.gitignore"
+  ]
+}
