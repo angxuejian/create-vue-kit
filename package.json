@@ -1,5 +1,5 @@
 {
-  "name": "create-vue-kit",
+  "name": "@angxuejian/create-vue-kit",
   "version": "1.0.0",
   "description": "Scaffold a lightweight Vue 3 monorepo project powered by Vite, TypeScript, ESLint, and Prettier.",
   "bin": {

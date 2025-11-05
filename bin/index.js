@@ -8,7 +8,7 @@ const prompts = require("prompts");
 async function run() {
   try {
     const cwdName = path.basename(process.cwd());
-    const defaultPath = "./test122";
+    const defaultPath = "./" + cwdName;
 
     console.log("\n");
 
