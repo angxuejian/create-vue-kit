@@ -69,14 +69,10 @@ async function run() {
     console.log("\n🎉 " + chalk.green("Project successfully created!") + "\n");
     console.log(chalk.green("📁 Location: ") + chalk.whiteBright(targetDir));
     console.log("\n🚀 " + chalk.green("Next steps:") + "");
+
+    console.log(chalk.gray("  1.") + " " + chalk.white("pnpm install"));
     console.log(
-      chalk.gray("  1.") +
-        " " +
-        chalk.white(`cd ${path.relative(process.cwd(), targetDir)}`)
-    );
-    console.log(chalk.gray("  2.") + " " + chalk.white("pnpm install"));
-    console.log(
-      chalk.gray("  3.") +
+      chalk.gray("  2.") +
         " " +
         chalk.white("npm run play ") +
         chalk.gray("# or read README for details")
