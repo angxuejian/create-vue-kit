@@ -42,6 +42,14 @@ async function run() {
     const templateDir = path.resolve(__dirname, "..", "template");
     await fs.copy(templateDir, targetDir);
 
+    // 重命名 gitignore -> .gitignore
+    const gitignorePath = path.join(targetDir, "gitignore");
+    const dotGitignorePath = path.join(targetDir, ".gitignore");
+
+    if (fs.existsSync(gitignorePath)) {
+      await fs.rename(gitignorePath, dotGitignorePath);
+    }
+
     async function replaceVars(dir) {
       const stat = await fs.stat(dir);
       if (stat.isDirectory()) {
@@ -66,9 +74,9 @@ async function run() {
     await initGit(targetDir);
 
     // created
-    console.log("\n🎉 " + chalk.green("Project successfully created!") + "\n");
-    console.log(chalk.green("📁 Location: ") + chalk.whiteBright(targetDir));
-    console.log("\n🚀 " + chalk.green("Next steps:") + "");
+    // console.log("\n🎉 " + chalk.green("Project successfully created!") + "\n");
+    // console.log(chalk.green("📁 Location: ") + chalk.whiteBright(targetDir));
+    console.log("\n🚀 " + chalk.blueBright("Next steps:") + "");
 
     console.log(chalk.gray("  1.") + " " + chalk.white("pnpm install"));
     console.log(
@@ -115,7 +123,7 @@ async function run() {
 }
 
 async function initGit(targetDir) {
-  console.log(chalk.green("\n📦 Initializing Git repository..."));
+  console.log(chalk.blueBright("\n📦 Initializing Git repository..."));
 
   try {
     // 检查是否已存在 .git
@@ -127,11 +135,8 @@ async function initGit(targetDir) {
 
     // 执行初始化
     execSync("git init", { cwd: targetDir, stdio: "ignore" });
-    execSync("git add .", { cwd: targetDir, stdio: "ignore" });
-    execSync('git commit -m "init project"', {
-      cwd: targetDir,
-      stdio: "ignore",
-    });
+    execSync("git checkout -b main", { cwd: targetDir, stdio: "ignore" });
+
     console.log(
       chalk.gray("  1.") +
         " " +
