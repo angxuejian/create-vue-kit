@@ -10,7 +10,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write packages/**/*.{ts,tsx,vue} play/src/*.{ts,tsx,vue}",
     "play": "pnpm --filter play dev",
+    "docs:dev": "pnpm --filter docs docs:dev",
     "docs:build": "pnpm --filter docs docs:build",
+    "docs:preview": "pnpm --filter docs docs:preview",
     "prepare": "husky",
     "precommit": "pnpm run type-check && pnpm lint-staged"
   },

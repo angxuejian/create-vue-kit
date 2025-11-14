@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/{{name}}/',  // ← 必须这样设置
+  base: '/{{name}}/',
   lang: 'zh-CN',
   title: '{{name}}',
   description: '{{description}}',

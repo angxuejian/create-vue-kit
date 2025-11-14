@@ -59,7 +59,7 @@ async function run() {
         }
       } else {
         // 只处理文本文件：基于扩展名简单判断
-        const textExt = [".js", ".ts", ".json", ".md", ".html", ".css", ".env"];
+        const textExt = [".js", ".ts", ".json", ".md", ".html", ".css", ".env", 'yml', 'mts'];
         const ext = path.extname(dir).toLowerCase();
         if (textExt.includes(ext)) {
           let content = await fs.readFile(dir, "utf8");
