@@ -104,3 +104,8 @@ temp/
 
 # Local development
 .local
+
+# --- VitePress ---
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/.vitepress/temp/

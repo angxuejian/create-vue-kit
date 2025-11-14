@@ -65,6 +65,7 @@ async function run() {
           let content = await fs.readFile(dir, "utf8");
           content = content
             .replaceAll("{{name}}", response.name)
+            .replaceAll("<<name>>", response.name)
             .replaceAll("{{description}}", response.description);
           await fs.writeFile(dir, content, "utf8");
         }

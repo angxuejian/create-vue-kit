@@ -1,0 +1,31 @@
+name: release {{name}}
+
+on:
+  push:
+    branches: [main] # 指定分支
+
+jobs:
+  release-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install and Build
+        run: pnpm install --frozen-lockfile && pnpm docs:build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          repository-name: angxuejian/angxuejian.github.io
+          branch: main
+          folder: dist              # 默认 dist 目录
+          target-folder: <<name>>   # 发布的文件夹
