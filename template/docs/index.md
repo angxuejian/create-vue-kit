@@ -9,11 +9,6 @@ hero:
   image:
     src: '/images/logo.svg'
     alt: 'Logo'
-    style:
-      border-radius: 16px
-      height: auto
-      margin-left: 200px
-      margin-top: 100px
 
   actions:
     - theme: brand
